@@ -5,6 +5,7 @@ const cors=require('cors');
 const resumeRoutes = require("./routes/resumeRoutes");
 const authRoutes = require("./routes/authRoutes");
 const connectDB = require("./config/db");
+const fs=require("fs");
 
 dotenv.config();
 
@@ -22,6 +23,10 @@ app.get("/", (req,res) => {
 });
 
 const port=process.env.PORT || 5000;
+
+if(!fs.existsSync("./uploads")) {
+    fs.mkdirSync("./uploads");
+}
 
 app.listen(port, () => {
  console.log(`app is running on port ${port}`);
