@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
 import Landing from "../pages/Landing";
 import Auth from "../pages/Auth";
 import History from "../pages/History";

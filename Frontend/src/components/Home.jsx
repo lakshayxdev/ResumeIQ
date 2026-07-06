@@ -1,7 +1,3 @@
-
-
-
-
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,19 +8,15 @@ export default function Home() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden ">
 
-      {/* Background Grid */}
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:70px_70px]" />
 
-      {/* Glow */}
 
       <div className="absolute left-1/2 top-40 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-violet-600/20 blur-[180px]" />
 
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-fuchsia-600/20 blur-[180px]" />
 
       <div className="relative max-w-6xl mx-auto px-6 text-center">
-
-        {/* Badge */}
 
         <div
     className="
@@ -62,8 +54,6 @@ export default function Home() {
     </span>
   </div>
 
-{/* Heading */}
-
 <h1 className=" text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
 
   Analyze.
@@ -81,8 +71,6 @@ export default function Home() {
   </span>
 
 </h1>
-
-{/* Subheading */}
 
 <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-400">
 
@@ -106,8 +94,6 @@ export default function Home() {
   </button>
 
 </div>
-        
-
       </div>
 
     </section>

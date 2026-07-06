@@ -65,26 +65,18 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Button */}
-
       <button
         onClick={() => setOpen(true)}
         className="fixed left-5 top-5 z-50 rounded-xl bg-[#121826] p-3 text-white lg:hidden"
       >
         <Menu size={22} />
       </button>
-
-      {/* Overlay */}
-
       {open && (
         <div
           onClick={() => setOpen(false)}
           className="fixed inset-0 z-40 bg-black/60 lg:hidden"
         />
       )}
-
-      {/* Sidebar */}
-
       <aside
         className={`
           fixed
@@ -107,7 +99,6 @@ export default function Sidebar() {
           lg:translate-x-0
         `}
       >
-        {/* Brand */}
 
         <div className="flex items-center justify-between border-b border-white/10 p-7">
                  <div className="flex items-center gap-3 select-none">
@@ -131,11 +122,9 @@ export default function Sidebar() {
           </button>
         </div>
 
-        {/* Menu */}
 
         <div className="flex-1 px-4 py-8">
           <div className="space-y-3">
-            {/* Back to Home */}
 
             <NavLink
               to="/"
@@ -151,10 +140,6 @@ export default function Sidebar() {
                 Back to Home
               </span>
             </NavLink>
-
-            {/* <div className="my-4 border-t border-white/10"></div> */}
-
-            {/* Menu Items */}
 
             {menu.map((item) => {
               const Icon = item.icon;
@@ -181,7 +166,6 @@ export default function Sidebar() {
           </div>
         </div>
 
-        {/* Logout */}
 
         <div className="border-t border-white/10 p-5">
           <button

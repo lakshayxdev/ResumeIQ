@@ -44,7 +44,6 @@ const RecentAnalysisCard = ({ analysis }) => {
         <div className="flex items-center gap-1 text-sm text-slate-500">
           <Calendar size={15} />
 
-          {/* {new Date(analysis.createdAt).toLocaleDateString()} */}
           {formatDate(analysis.createdAt)}
         </div>
 

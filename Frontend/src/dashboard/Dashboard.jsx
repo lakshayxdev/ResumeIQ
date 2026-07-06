@@ -69,7 +69,6 @@ const Dashboard = () => {
 
       </div>
 
-      {/* Stats */}
       <FadeUp>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -91,7 +90,6 @@ const Dashboard = () => {
       </div>
       </FadeUp>
 
-      {/* Recent */}
 
       <div className="mt-14">
 

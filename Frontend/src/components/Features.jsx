@@ -55,16 +55,11 @@ export default function Features() {
     className="relative py-28 bg-[#070B16] overflow-hidden">
 
        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:70px_70px]" />
-
-      {/* Background Blur */}
-
       <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-violet-600/20 blur-[120px]" />
 
       <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-fuchsia-600/20 blur-[140px]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-
-        {/* Heading */}
 
         <div className="text-center max-w-3xl mx-auto">
 
@@ -86,8 +81,6 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Cards */}
-
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
           {features.map((feature, index) => {
@@ -101,11 +94,9 @@ export default function Features() {
                 className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-violet-500/40 hover:shadow-[0_0_40px_rgba(139,92,246,0.2)]"
               >
 
-                {/* Glow */}
 
                 <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-600/10 blur-3xl group-hover:bg-violet-500/20 transition-all duration-500" />
 
-                {/* Icon */}
 
                 <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-fuchsia-600 shadow-lg">
 
@@ -113,15 +104,12 @@ export default function Features() {
 
                 </div>
 
-                {/* Title */}
 
                 <h3 className="relative mt-7 text-2xl font-semibold text-white">
 
                   {feature.title}
 
                 </h3>
-
-                {/* Description */}
 
                 <p className="relative mt-4 leading-8 text-slate-400">
 

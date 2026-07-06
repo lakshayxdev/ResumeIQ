@@ -1,4 +1,3 @@
-import { TrendingUp } from "lucide-react";
 
 const StatsCard = ({ title, value, icon: Icon, color }) => {
   return (
@@ -11,17 +10,10 @@ const StatsCard = ({ title, value, icon: Icon, color }) => {
             {value}
           </h2>
 
-          {/* <div className="mt-4 flex items-center gap-2 text-sm text-green-400">
-            <TrendingUp size={16} />
-            <span>Updated Live</span>
-          </div> */}
-
+          
          <div className="flex items-center gap-2 mt-4">
   <span className="relative flex h-2.5 w-2.5">
-    {/* Pulse */}
     <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
-
-    {/* Solid Dot */}
     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
   </span>
 

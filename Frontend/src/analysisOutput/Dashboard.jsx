@@ -4,8 +4,7 @@ import Strengths from "../components/Strengths";
 import Weaknesses from "../components/Weaknesses";
 import Suggestions from "../components/Suggestions";
 import JobFit from "../components/JobFit";
-// import { downloadPDF } from "./pdfGenerator";
-// import { Download } from "lucide-react";
+
 
 const Dashboard = ({ analysis }) => {
   if (!analysis) return null;

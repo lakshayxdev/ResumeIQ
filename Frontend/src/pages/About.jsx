@@ -9,17 +9,14 @@ const About = () => {
   return (
     <section id="about" className="relative min-h-screen overflow-hidden bg-[#070B16] px-6 py-24">
 
-      {/* Grid Background */}
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:84px_84px]" />
 
-      {/* Glow */}
 
       <div className="absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-violet-600/20 blur-[150px]" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
 
-        {/* Heading */}
 
         <div className="text-center">
 
@@ -43,9 +40,6 @@ const About = () => {
           </p>
 
         </div>
-
-        {/* Cards */}
-
         <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4 ">
 
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-violet-500/40 hover:shadow-[0_0_40px_rgba(139,92,246,0.2)]">
@@ -101,9 +95,6 @@ const About = () => {
           </div>
 
         </div>
-
-        {/* Bottom Section */}
-
         <div className="mt-24 rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-violet-500/40 hover:shadow-[0_0_40px_rgba(139,92,246,0.2)]">
 
           <h2 className="text-3xl font-bold text-white">

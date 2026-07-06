@@ -1,22 +1,3 @@
-// import Sidebar from "../dashboard/Sidebar"
-// import { Outlet } from "react-router-dom";
-
-
-// const DashboardLayout = () => {
-//   return (
-//     <div className="flex h-screen overflow-hidden">
-//         <Sidebar />
-
-//         <main>
-//             <Outlet />
-//         </main>
-//     </div>
-//   )
-// }
-
-// export default DashboardLayout
-
-
 import Sidebar from "../dashboard/Sidebar";
 import { Outlet } from "react-router-dom";
 

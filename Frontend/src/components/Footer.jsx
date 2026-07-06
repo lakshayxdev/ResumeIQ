@@ -47,7 +47,6 @@ const Footer = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-          {/* Logo */}
           <div>
             <div className="flex items-center gap-3 select-none">
       <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-violet-700 shadow-lg shadow-cyan-500/30">
@@ -67,8 +66,6 @@ const Footer = () => {
               more interviews.
             </p>
           </div>
-
-          {/* Product */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-5">
               Product
@@ -92,8 +89,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* Resources */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-5">
               Resources
@@ -118,7 +113,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-5">
               Connect
@@ -148,7 +142,6 @@ const Footer = () => {
 
         </div>
 
-        {/* Divider */}
 
         <div className="border-t border-cyan-500/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
 
