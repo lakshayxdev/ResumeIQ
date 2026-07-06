@@ -32,6 +32,10 @@ if(!fs.existsSync("./uploads")) {
     fs.mkdirSync("./uploads");
 }
 
+app.get("/", (req, res) => {
+  res.send("ResumeIQ Backend is Running ");
+});
+
 app.listen(port, () => {
  console.log(`app is running on port ${port}`);
 });
