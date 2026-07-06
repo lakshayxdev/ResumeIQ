@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  // baseURL: "https://resumeiq-4-3qyk.onrender.com/",
-    baseURL: "http://localhost:5000/",
+  baseURL: "https://resumeiq-6.onrender.com/",
 
 });
 
