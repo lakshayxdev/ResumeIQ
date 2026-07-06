@@ -6,6 +6,8 @@ const resumeRoutes = require("./routes/resumeRoutes");
 const authRoutes = require("./routes/authRoutes");
 const connectDB = require("./config/db");
 const fs=require("fs");
+const dashboardRoutes=require("./routes/dashboardRoutes");
+const historyRoutes=require("./routes/historyRoutes");
 
 dotenv.config();
 
@@ -17,6 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use("/api/resume", resumeRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/history", historyRoutes);
 
 app.get("/", (req,res) => {
     res.send("API is working");

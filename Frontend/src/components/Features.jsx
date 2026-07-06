@@ -1,76 +1,144 @@
+
+
+
+import {
+  FileSearch,
+  Briefcase,
+  BadgeCheck,
+  History,
+  FileText,
+  ShieldCheck,
+} from "lucide-react";
+
 const features = [
   {
-    title: "ATS Score Analysis",
+    icon: FileSearch,
+    title: "AI Resume Analysis",
     description:
-      "Deep scan of document structure and formatting to ensure compatibility with top-tier ATS platforms.",
-    icon: "📊",
+      "Get detailed AI-powered insights on resume quality, formatting, strengths and weaknesses.",
   },
   {
-    title: "Job Match Percentage",
+    icon: Briefcase,
+    title: "ATS Job Matching",
     description:
-      "Real-time semantic matching between your experience and specific job requirements.",
-    icon: "🎯",
+      "Compare your resume against real job descriptions and maximize ATS compatibility.",
   },
   {
-    title: "AI Suggestions",
+    icon: BadgeCheck,
+    title: "Smart Suggestions",
     description:
-      "Context-aware recommendations to improve bullet points and highlight achievements.",
-    icon: "💡",
+      "Receive personalized recommendations to improve interview readiness and resume quality.",
   },
   {
-    title: "Keyword Detection",
+    icon: History,
+    title: "Analysis History",
     description:
-      "Identify missing industry keywords and hard skills recruiters are searching for.",
-    icon: "🔑",
+      "Access all previous resume analyses with ATS scores and job roles anytime.",
+  },
+  {
+    icon: FileText,
+    title: "Resume Builder",
+    description:
+      "Build beautiful resumes using professional templates with live preview and PDF export.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Secure Workspace",
+    description:
+      "JWT authentication keeps every uploaded resume and generated report completely private.",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white">
-            Uncompromising Career Insights
+    <section id="feature"
+    className="relative py-28 bg-[#070B16] overflow-hidden">
+
+       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:70px_70px]" />
+
+      {/* Background Blur */}
+
+      <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-violet-600/20 blur-[120px]" />
+
+      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-fuchsia-600/20 blur-[140px]" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
+
+        {/* Heading */}
+
+        <div className="text-center max-w-3xl mx-auto">
+
+          <span className="inline-flex rounded-full border border-violet-500/30 bg-violet-500/10 px-5 py-2 text-sm font-medium text-violet-300">
+            Features
+          </span>
+
+          <h2 className="mt-8 text-4xl font-bold text-white">
+            Everything You Need
+            <span className="block bg-linear-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+              To Build Better Resumes
+            </span>
           </h2>
 
-          <div className="w-16 h-1 bg-violet-800 mx-auto mt-4 rounded-full" />
+          <p className="mt-6 text-lg text-center leading-8 text-slate-400">
+            ResumeIQ combines AI-powered resume analysis, ATS optimization,
+            resume building and intelligent job matching into one seamless
+            platform.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="
-                bg-white/5
-                backdrop-blur-xl
-                border border-white/10
-                rounded-2xl
-                p-6
-                hover:border-violet-500/40
-                hover:bg-white/10
-                hover:-translate-y-1
-                transition-all duration-300
-                hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]
-group
-              "
-            >
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl mb-5 group-hover:scale-110
-transition-transform">
-                {feature.icon}
+        {/* Cards */}
+
+        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          {features.map((feature, index) => {
+
+            const Icon = feature.icon;
+
+            return (
+
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-violet-500/40 hover:shadow-[0_0_40px_rgba(139,92,246,0.2)]"
+              >
+
+                {/* Glow */}
+
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-600/10 blur-3xl group-hover:bg-violet-500/20 transition-all duration-500" />
+
+                {/* Icon */}
+
+                <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-fuchsia-600 shadow-lg">
+
+                  <Icon className="text-white" size={30} />
+
+                </div>
+
+                {/* Title */}
+
+                <h3 className="relative mt-7 text-2xl font-semibold text-white">
+
+                  {feature.title}
+
+                </h3>
+
+                {/* Description */}
+
+                <p className="relative mt-4 leading-8 text-slate-400">
+
+                  {feature.description}
+
+                </p>
+
               </div>
 
-              <h3 className="text-lg font-semibold text-white mb-3">
-                {feature.title}
-              </h3>
+            );
 
-              <p className="text-slate-400 text-sm leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+          })}
+
         </div>
+
       </div>
+
     </section>
   );
 }

@@ -1,6 +1,6 @@
 const fs = require("fs");
 const pdfParse = require("pdf-parse");
-
+const Analysis = require("../models/analysisModel");
 const client = require("../utils/ai");
 
 const uploadResume = async (req, res) => {
@@ -61,7 +61,8 @@ ${req.body.jobDescription}
 Return ONLY valid JSON in this exact format:
 
 {
-  "atsScore": must be valid integer from 0-100,
+  "role": "",
+  "atsScore": 0,
   "matchedSkills": [],
   "missingSkills": [],
   "strengths": [],
@@ -87,6 +88,24 @@ Return ONLY valid JSON in this exact format:
 
     const parsedResponse =
       JSON.parse(response);
+
+//       await History.create({
+//   user: req.userId,
+//   resumeName: req.file.originalname,
+//   role: result.role,           // or result.jobRole depending on your AI response
+//   atsScore: result.atsScore,   // whatever field contains the final ATS score
+// });
+
+      await Analysis.create({
+  user: req.userId,
+  resumeName: req.file.originalname,
+  role: parsedResponse.role,
+  atsScore: parsedResponse.atsScore,
+  strengths: parsedResponse.strengths,
+  weaknesses: parsedResponse.weaknesses,
+  missingSkills: parsedResponse.missingSkills,
+  suggestions: parsedResponse.suggestions,
+});
 
     return res.json({
       success: true,

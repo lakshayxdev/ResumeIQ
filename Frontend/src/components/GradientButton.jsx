@@ -33,6 +33,12 @@ shadow-lg
 shadow-violet-500/20
 hover:shadow-violet-500/40
 hover:scale-[1.02]
+disabled:cursor-not-allowed
+disabled:opacity-50
+disabled:hover:scale-100
+disabled:hover:shadow-none
+disabled:from-gray-600
+disabled:to-gray-700
 "
         ${className}
       `}

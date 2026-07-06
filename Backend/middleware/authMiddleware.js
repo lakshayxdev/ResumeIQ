@@ -27,9 +27,10 @@ const protect = async (req, res, next) => {
       token,
       process.env.JWT_SECRET
     );
+    console.log(decoded);
 
-    req.user = decoded;
-
+req.user = decoded;
+req.userId = decoded.id;
     next();
 
   } catch (error) {

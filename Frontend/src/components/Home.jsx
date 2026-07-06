@@ -1,152 +1,32 @@
-import { useState } from "react";
-import toast from "react-hot-toast";
-import Aurora from "./Aurora";
 
-import ResumeUploader from "../components/ResumeUploader";
-import JobDescriptionInput from "../components/JobDescriptionInput";
-import AnalyzeSection from "../components/AnalyzeSection";
-import DashboardSkeleton from "./DashboardSkeleton";
 
-import LoginModal from "../components/LoginModal";
-import SignupModal from "../components/SignupModal";
 
-import Dashboard from "../components/Dashboard";
 
-import api from "./api";
+import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-const Home = () => {
-  const [resume, setResume] = useState(null);
-
-  const [jobDescription, setJobDescription] =
-    useState("");
-
-  const [loading, setLoading] =
-    useState(false);
-
-  const [analysis, setAnalysis] =
-    useState(null);
-
-  const [showLogin, setShowLogin] =
-    useState(false);
-
-  const [showSignup, setShowSignup] =
-    useState(false);
-
-  const handleAnalyze = async () => {
-     if (!resume && !jobDescription) {
-    toast.error("Please upload your resume and job description");
-    return;
-  }
-
-  if (!resume) {
-    toast.error("Please upload your resume");
-    return;
-  }
-
-  if (!jobDescription) {
-    toast.error("Please write job description");
-    return;
-  }
-  
-    const token= localStorage.getItem("token")
-   console.log(
-  "TOKEN:",
- token
-);
-
-    if (!token) {
-  console.log("OPENING LOGIN");
-  setShowLogin(true);
-  return;
-}
-
-    if (!resume) {
-      alert("Please upload a resume");
-      return;
-    }
-
-    if (!jobDescription.trim()) {
-      alert(
-        "Please enter a job description"
-      );
-      return;
-    }
-
-    try {
-      setLoading(true);
-
-      const formData = new FormData();
-
-      formData.append(
-        "resume",
-        resume
-      );
-
-      formData.append(
-        "jobDescription",
-        jobDescription
-      );
-
-      
-
-      for(let pair of formData.entries()) {
-        console.log(pair[0],pair[1]);
-      }
-
-      const { data } = await api.post(
-        "/api/resume/upload",
-        formData,
-      );
-
-     
-
-      setAnalysis(data.analysis);
-       toast.success("Analysis completed");
-    } catch (error) {
-      console.log(error);
-
-      alert(
-        error?.response?.data?.message ||
-          "Analysis Failed"
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
+export default function Home() {
+  const navigate=useNavigate();
+    const user = JSON.parse(localStorage.getItem("user"));
 
   return (
-  <>
-   
-    <section className="relative z-10 flex min-h-[60vh] flex-col items-center justify-center px-6 pt-20 pb-16 text-center overflow-hidden bg-[#050816]">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden ">
 
-    
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: "80px 80px",
-        }}
-      />
+      {/* Background Grid */}
 
-      <div className="absolute inset-x-0 top-[40%] h-300px opacity-80 blur-[60px]">
-        <Aurora
-          colorStops={[
-            "#06B6D4",
-            "#3B82F6",
-            "#8B5CF6",
-          ]}
-          blend={0.5}
-          amplitude={3}
-          speed={1}
-        />
-      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:70px_70px]" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center">
+      {/* Glow */}
 
-       <div
+      <div className="absolute left-1/2 top-40 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-violet-600/20 blur-[180px]" />
+
+      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-fuchsia-600/20 blur-[180px]" />
+
+      <div className="relative max-w-6xl mx-auto px-6 text-center">
+
+        {/* Badge */}
+
+        <div
     className="
       inline-flex
       items-center
@@ -166,7 +46,7 @@ const Home = () => {
         w-2.5
         h-2.5
         rounded-full
-        bg-cyan-400
+        bg-violet-600
         animate-pulse
       "
     />
@@ -182,104 +62,55 @@ const Home = () => {
     </span>
   </div>
 
-        <h1 className="max-w-6xl text-4xl
-sm:text-5xl
-md:text-7xl
-lg:text-8xl
-font-bold
-leading-tight
-text-white">
-          Optimize Your Resume
-          <br />
+{/* Heading */}
 
-          <span className="text-slate-300 text-4xl
-sm:text-5xl
-md:text-7xl
-lg:text-8xl
-font-bold
-leading-tight">
-            With
-          </span>
+<h1 className=" text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
 
-          <br />
+  Analyze.
 
-          <div className="mt-4 inline-block rounded-2xl border border-violet-400/30 bg-violet-500/10 px-4 py-2 sm:px-6 sm:py-3 backdrop-blur-sm shadow-[0_0_30px_rgba(34,211,238,0.25)]">
-  <span className="bg-linear-to-r from-violet-400 to-blue-500 bg-clip-text text-transparent">
-    AI Precision
+  <span className="block bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+
+    Optimize.
+
   </span>
-</div>
-        </h1>
 
-        <p className="mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-slate-400">
-          Analyze your resume against real-world job descriptions
-          and improve ATS compatibility with AI-powered insights.
-        </p>
+  <span className="block text-white">
+
+    Get Hired.
+
+  </span>
+
+</h1>
+
+{/* Subheading */}
+
+<p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-400">
+
+  AI-powered resume analysis and ATS optimization to help you
+  apply with confidence and land more interviews.
+
+</p>
+
+<div className="mt-5 flex flex-wrap justify-center gap-6">
+
+  <button
+  onClick={() => {user? navigate("/dashboard") : navigate("/login")}}
+    className="group flex items-center gap-3 rounded-xl bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 px-12 py-5 font-semibold text-white shadow-lg shadow-violet-600/30 transition-all duration-300 hover:scale-105 hover:shadow-violet-500/50"
+  >
+    Start Analyzing
+
+    <ArrowRight
+      size={18}
+      className="transition-transform duration-300 group-hover:translate-x-1"
+    />
+  </button>
+
+</div>
+        
 
       </div>
 
     </section>
-
-    
-    <div className="max-w-7xl mx-auto px-6 py-12">
-
-      <div className="grid lg:grid-cols-2 gap-6">
-
-        <ResumeUploader
-          resume={resume}
-          setResume={setResume}
-        />
-
-        <JobDescriptionInput
-          jobDescription={jobDescription}
-          setJobDescription={setJobDescription}
-        />
-
-      </div>
-
-      
-      <div className="mt-8">
-        <AnalyzeSection
-          handleAnalyze={handleAnalyze}
-          loading={loading}
-        />
-      </div>
-
-      {loading ? (
-        <div className="py-8">
-          <DashboardSkeleton />
-        </div>
-      ) : (
-        <div className="py-8">
-          <Dashboard analysis={analysis} />
-        </div>
-      )}
-
-    </div>
-
-    
-    <LoginModal
-      isOpen={showLogin}
-      onClose={() => setShowLogin(false)}
-      openSignup={() => {
-        setShowLogin(false);
-        setShowSignup(true);
-      }}
-    />
-
-   
-    <SignupModal
-      isOpen={showSignup}
-      onClose={() => setShowSignup(false)}
-      openLogin={() => {
-        setShowSignup(false);
-        setShowLogin(true);
-      }}
-    />
-  </>
-);
-};
-
-export default Home;
-
-
+  );
+}
 
