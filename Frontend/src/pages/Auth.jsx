@@ -101,32 +101,14 @@ if (!emailRegex.test(signupData.email)) {
     }
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
   return (
 <section className="relative min-h-screen overflow-hidden bg-[#070B16]">
 
-  {/* Grid */}
-
   <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:70px_70px]" />
-
-  {/* Glow */}
 
   <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-violet-600/20 blur-[170px]" />
 
   <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-fuchsia-600/15 blur-[150px]" />
-
-  {/* Logo */}
 
   <header className="relative z-20 px-8 py-8">
 
@@ -144,9 +126,6 @@ if (!emailRegex.test(signupData.email)) {
        </div>
 
   </header>
-
-  {/* Center */}
-
   <div className="relative z-10 flex min-h-[85vh] items-center justify-center px-5">
 
     <div
@@ -162,9 +141,6 @@ if (!emailRegex.test(signupData.email)) {
       shadow-[0_20px_80px_rgba(0,0,0,.45)]
     "
     >
-
-      {/* Tabs */}
-
       <div className="relative flex">
 
         <button
@@ -208,9 +184,6 @@ if (!emailRegex.test(signupData.email)) {
         >
           Sign In
         </button>
-
-        {/* Sliding Pill */}
-
         <div
           className={`absolute
             bottom-0
@@ -232,8 +205,6 @@ if (!emailRegex.test(signupData.email)) {
 
       </div>
 
-      {/* Slider */}
-
 <div className="overflow-hidden">
 
   <div
@@ -252,8 +223,6 @@ if (!emailRegex.test(signupData.email)) {
     `}
   >
 
-    {/* ================= LOGIN ================= */}
-
     <div className="w-1/2 shrink-0 p-8">
 
       <h2 className="text-3xl font-bold text-white">
@@ -266,7 +235,6 @@ if (!emailRegex.test(signupData.email)) {
 
       <div className="mt-8">
 
-        {/* Paste Login Form Here */}
         <form
           onSubmit={handleLogin}
           className="space-y-5"
@@ -439,7 +407,6 @@ if (!emailRegex.test(signupData.email)) {
 
     </div>
 
-    {/* ================= SIGNUP ================= */}
 
     <div className="w-1/2 shrink-0 p-8">
 
@@ -453,7 +420,6 @@ if (!emailRegex.test(signupData.email)) {
 
       <div className="mt-8">
 
-        {/* Paste Signup Form Here */}
          <form
           onSubmit={handleSignup}
           className="space-y-5"
